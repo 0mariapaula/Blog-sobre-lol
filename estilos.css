@@ -44,14 +44,14 @@ nav a:hover {
 
 .champion {
     text-align: center;
-    width: calc(25% - 20px); /* 25% para dividir em 4 colunas */
+    width: 24%; /* 23% para deixar espaço entre as imagens */
     margin-bottom: 20px; /* Espaço entre as fileiras */
-    margin-right: 20px; /* Espaço entre os campeões */
 }
 
 .champion img {
     width: 100%; /* Ocupa toda a largura da div */
     border-radius: 10%; /* Deixa a imagem redonda */
+
     transition: transform 0.3s ease, filter 0.3s ease; /* Adiciona uma transição suave */
     filter: blur(5px); /* Aplica um efeito de desfoque inicial */
 }
@@ -64,9 +64,9 @@ nav a:hover {
 .champion-name {
     margin-top: 16px;
     cursor: pointer;
-    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
-}
+    font-family: "Courier New", "Monaco", "monospace";
 
+}
 .footer {
     background-color: #333;
     color: #fff;

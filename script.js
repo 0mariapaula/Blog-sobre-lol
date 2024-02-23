@@ -1,14 +1,24 @@
 document.addEventListener("DOMContentLoaded", function() {
-    const championNames = document.querySelectorAll(".champion-name");
-    championNames.forEach(champion => {
-        champion.addEventListener("mouseover", function() {
-            champion.style.color = "blue"; // Altera a cor do nome ao passar o mouse sobre ele
-        });
-        champion.addEventListener("mouseout", function() {
-            champion.style.color = "black"; // Restaura a cor original ao tirar o mouse de cima
-        });
-        champion.addEventListener("click", function() {
-            window.location.href = "index2.html"; // Redireciona para a página index2.html ao clicar no nome
-        });
-    });
+    const championName = window.location.hash.substr(1); // Obtém o nome do campeão da URL
+
+    if (championName) {
+        fetch('champions.json')
+            .then(response => response.json())
+            .then(champions => {
+                const champion = champions[championName];
+                if (champion) {
+                    const championDetails = document.getElementById('champion-details');
+                    championDetails.innerHTML = `
+                        <h2>${champion.name}</h2>
+                        <img src="${champion.image}" alt="${champion.name}">
+                        <p>${champion.description}</p>
+                    `;
+                } else {
+                    console.error('Campeão não encontrado');
+                }
+            })
+            .catch(error => console.error('Erro ao carregar dados do campeão:', error));
+    } else {
+        console.error('Nome do campeão não encontrado na URL');
+    }
 });

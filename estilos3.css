@@ -64,5 +64,13 @@ body {
 }
 
 .btn-container {
-    text-align: center; /* Centralizar o conteúdo */
+    text-align: right; /* Centralizar o conteúdo */
+}
+
+.btn:hover {
+    background-color: #a817e1; /* Altera a cor de fundo ao passar o mouse */
+}
+
+.btn-container {
+    text-align: right; /* Centralizar o conteúdo */
 }
